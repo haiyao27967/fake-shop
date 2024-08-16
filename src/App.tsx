@@ -1,4 +1,4 @@
-import Logo from "../public/fake-logo.svg";
+import Logo from "./assets/fake-logo.svg"
 import {
   MdSearch,
   MdFavoriteBorder,
