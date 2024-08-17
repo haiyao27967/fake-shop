@@ -2,11 +2,11 @@ import ItemCard from "../components/ItemCard";
 
 function Home() {
   return (
-    <div className="flex-fit">
-      <div className="w-full">
-        <img className="object-cover" src="https://placehold.co/1600x400" />
+    <div className="flex-fit w-full">
+      <div className="w-full bg-red-600">
+        <img className="w-full h-auto object-cover" src="https://placehold.co/1600x300" />
       </div>
-      <div className="shadow-2xl px-36 mx-36">
+      <div className="border-x-2 shadow-md px-36 mx-36">
         <section className="py-12 gap-48 columns-2">
           <div className="w-full">
             <img className="object-cover" src="https://placehold.co/400" />
@@ -43,7 +43,7 @@ function Home() {
         </section>
         <div className="py-12">
           <h1 className="text-lg font-bold">Top picks</h1>
-          <div className="flex p-4 gap-x-8 overflow-x-auto">
+          <div id="topPicks" className="flex p-4 gap-x-8 overflow-x-auto" onDragStart={() => console.log("ondrag enter")} onDragEnd={() => console.log("ondrag leave")}>
             {Array.from({ length: 10 }, (_, k) => k + 1).map((i) => (
               <ItemCard name={'item' + i} url="https://placehold.co/150" />
             ))}

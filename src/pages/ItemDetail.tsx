@@ -1,3 +1,3 @@
 export default function ItemDetail() {
-    return (<div>Item detail</div>)
+    return (<div className="flex-auto">Item detail</div>)
 }

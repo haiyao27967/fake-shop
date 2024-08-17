@@ -17,7 +17,7 @@ const categories = ['New', 'Women', 'Men', 'Kids', 'Baby', 'Home', 'Toys', 'Gift
 
 function Topbar() {
   return (
-    <header className="shadow">
+    <header className="flex-initial shadow">
       <div className="flex justify-between">
         <div>
           <img src={Logo} width={100} height={40} />
@@ -57,7 +57,7 @@ function Topbar() {
 
 function Footer() {
   return (
-    <footer className="bg-slate-300 flex">
+    <footer className="flex-none bg-slate-300 flex">
       <div className="flex w-1/4 p-12 flex-col">
         <img src={Logo} width={120} height={60} />
         <div className="flex gap-2">
@@ -103,7 +103,7 @@ function Footer() {
 function App() {
   return (
     <HashRouter>
-      <div className="flex flex-col">
+      <div className="flex flex-col min-h-screen">
         <Topbar />
         <Routes>
           <Route path="/search" element={<Search />} />
