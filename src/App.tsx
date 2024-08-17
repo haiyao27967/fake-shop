@@ -8,6 +8,10 @@ import {
 import { FaYoutube, FaInstagram, FaFacebookSquare } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import Home from './pages/Home';
+import { HashRouter, Route, Routes } from 'react-router-dom';
+import Notfound from './pages/404';
+import Search from './pages/Search';
+import ItemDetail from './pages/ItemDetail';
 
 const categories = ['New', 'Women', 'Men', 'Kids', 'Baby', 'Home', 'Toys', 'Gifts', 'Sale'];
 
@@ -98,11 +102,18 @@ function Footer() {
 
 function App() {
   return (
-    <div className="flex flex-col">
-      <Topbar />
-      <Home />
-      <Footer />
-    </div>
+    <HashRouter>
+      <div className="flex flex-col">
+        <Topbar />
+        <Routes>
+          <Route path="/search" element={<Search />} />
+          <Route path="/item" element={<ItemDetail />} />
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<Notfound />} />
+        </Routes>
+        <Footer />
+      </div>
+    </HashRouter>
   );
 }
 
